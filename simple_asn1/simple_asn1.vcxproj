@@ -73,18 +73,30 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PublicIncludeDirectories>
     </PublicIncludeDirectories>
+    <OutDir>$(AKIROOT)\.install\$(Platform)-$(Configuration)\bin\</OutDir>
+    <IntDir>$(ProjectDir).build\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(AKIROOT)\.install\$(Platform)-$(Configuration)\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PublicIncludeDirectories>
     </PublicIncludeDirectories>
+    <OutDir>$(AKIROOT)\.install\$(Platform)-$(Configuration)\bin\</OutDir>
+    <IntDir>$(ProjectDir).build\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(AKIROOT)\.install\$(Platform)-$(Configuration)\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PublicIncludeDirectories>
     </PublicIncludeDirectories>
+    <OutDir>$(AKIROOT)\.install\$(Platform)-$(Configuration)\bin\</OutDir>
+    <IntDir>$(ProjectDir).build\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(AKIROOT)\.install\$(Platform)-$(Configuration)\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PublicIncludeDirectories>
     </PublicIncludeDirectories>
+    <OutDir>$(AKIROOT)\.install\$(Platform)-$(Configuration)\bin\</OutDir>
+    <IntDir>$(ProjectDir).build\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(AKIROOT)\.install\$(Platform)-$(Configuration)\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -99,6 +111,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /s /i /y $(ProjectDir)include\simple_asn1 $(AKIROOT)\.install\$(Platform)-$(Configuration)\include\simple_asn1</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -117,6 +132,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /s /i /y $(ProjectDir)include\simple_asn1 $(AKIROOT)\.install\$(Platform)-$(Configuration)\include\simple_asn1</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -131,6 +149,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /s /i /y $(ProjectDir)include\simple_asn1 $(AKIROOT)\.install\$(Platform)-$(Configuration)\include\simple_asn1</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -149,6 +170,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /s /i /y $(ProjectDir)include\simple_asn1 $(AKIROOT)\.install\$(Platform)-$(Configuration)\include\simple_asn1</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\simple_asn1\crypto\algorithms.h" />
